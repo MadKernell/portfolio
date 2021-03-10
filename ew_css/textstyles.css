@@ -68,11 +68,16 @@
  font-size: 18px; 
  color: #FEFEFE;
  word-wrap: break-word;}
-.Style19{font-family:  'ArialMT', 'Arial' ,sans-serif ;
+.Style19{font-family:  'Helvetica' ,sans-serif ;
+ font-size: 18px; 
+ margin:0;
+ color: #FEFEFE;
+ word-wrap: break-word;}
+.Style20{font-family:  'ArialMT', 'Arial' ,sans-serif ;
  font-size: 20px; 
  color: #A9A9A8;
  word-wrap: break-word;}
-.Style20{font-family:  'ArialMT', 'Arial' ,sans-serif ;
+.Style21{font-family:  'ArialMT', 'Arial' ,sans-serif ;
  font-size: 16px; 
  color: #FEFEFE;
  word-wrap: break-word;}
