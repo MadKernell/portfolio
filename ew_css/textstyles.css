@@ -20,32 +20,28 @@
  font-weight:700; 
  color: #FEFEFE;
  word-wrap: break-word;}
-.Style8{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
+.Style8{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 19px; 
- font-weight:300; 
  margin:0;
  color: #656565;
  word-wrap: break-word;}
 .para9{font-size: 0; text-align:left; padding-bottom:0px; margin-top:0px; padding-top:0px;}
-.Style10{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
+.Style10{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 19px; 
- font-weight:300; 
  color: #656565;
  word-wrap: break-word;}
-.Style11{font-family:  'Avenir-Black', 'Avenir' ,'Arial' ,sans-serif ;
+.Style11{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 50px; 
  font-weight:700; 
  color: #FE7D77;
  word-wrap: break-word;}
 .para12{font-size: 0; text-align:center; padding-bottom:0px; margin-top:0px; padding-top:0px;}
-.Style13{font-family:  'Avenir-Medium', 'Avenir' ,'Arial' ,sans-serif ;
+.Style13{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 24px; 
- font-weight:500; 
  color: #FEFFFF;
  word-wrap: break-word;}
-.Style14{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
+.Style14{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 22px; 
- font-weight:300; 
  color: #C0C0BF;
  word-wrap: break-word;}
 .Style15{font-family:  'Avenir-Black', 'Avenir' ,'Arial' ,sans-serif ;
@@ -62,230 +58,204 @@
  font-size: 35px; 
  color: #FEFEFE;
  word-wrap: break-word;}
-.Style18{font-family:  'Avenir-Black', 'Avenir' ,'Arial' ,sans-serif ;
- font-size: 60px; 
- font-weight:700; 
- color: #FE2500;
- word-wrap: break-word;}
-.Style19{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
+.Style18{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 18px; 
- font-weight:300; 
  color: #FEFEFE;
  opacity: 0.8; 
  filter:alpha(opacity=80);
  word-wrap: break-word;}
-.Style20{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
+.Style19{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 28px; 
- font-weight:300; 
  color: #C0C0BF;
  word-wrap: break-word;}
-.Style21{font-family:  'ArialMT', 'Arial' ,sans-serif ;
+.Style20{font-family:  'ArialMT', 'Arial' ,sans-serif ;
  font-size: 18px; 
  color: #929191;
  opacity: 0.7; 
  filter:alpha(opacity=70);
  word-wrap: break-word;}
-.linkStyle_22{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
+.linkStyle_21{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
  font-size: 17px; 
  font-weight:300; 
  color: #FE7D77;
  text-decoration: underline; 
  /* 0 0 0 #00F900 #FE7D77 #FF2600 */
  word-wrap: break-word;}
-.linkStyle_22:visited{color:#FE7D77; text-decoration:underline;}
-.linkStyle_22:hover{color:#FF2600; text-decoration:underline;}
-.Style25{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
+.linkStyle_21:visited{color:#FE7D77; text-decoration:underline;}
+.linkStyle_21:hover{color:#FF2600; text-decoration:underline;}
+.Style24{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 22px; 
- font-weight:300; 
  color: #FEFEFE;
  word-wrap: break-word;}
-.Style26{font-family:  'Helvetica' ,sans-serif ;
+.Style25{font-family:  'Helvetica' ,sans-serif ;
  font-size: 16px; 
  color: #919190;
+ word-wrap: break-word;}
+.Style26{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
+ font-size: 19px; 
+ color: #A9A9A8;
  word-wrap: break-word;}
 .Style27{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
  font-size: 19px; 
  font-weight:300; 
- color: #A9A9A8;
+ margin:0;
+ color: #656565;
  word-wrap: break-word;}
-.Style28{font-family:  'Avenir-Black', 'Avenir' ,'Arial' ,sans-serif ;
- font-size: 40px; 
- font-weight:700; 
- color: #FE7D77;
- word-wrap: break-word;}
-.Style29{font-family:  'Avenir-Black', 'Avenir' ,'Arial' ,sans-serif ;
- font-size: 25px; 
- color: #FEFEFE;
- word-wrap: break-word;}
-.Style30{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
- font-size: 17px; 
- font-weight:300; 
- color: #FEFEFE;
- opacity: 0.8; 
- filter:alpha(opacity=80);
- word-wrap: break-word;}
-.Style31{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
+.Style28{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
  font-size: 19px; 
  font-weight:300; 
  color: #D5D5D4;
  word-wrap: break-word;}
-.linkStyle_32{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
+.linkStyle_29{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
  font-size: 19px; 
  font-weight:300; 
  color: #FE7D77;
  text-decoration: underline; 
  /* 0 0 0 #00F900 #FE7D77 #FF2600 */
  word-wrap: break-word;}
-.linkStyle_32:visited{color:#FE7D77; text-decoration:underline;}
-.linkStyle_32:hover{color:#FF2600; text-decoration:underline;}
-.Style35{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
+.linkStyle_29:visited{color:#FE7D77; text-decoration:underline;}
+.linkStyle_29:hover{color:#FF2600; text-decoration:underline;}
+.Style32{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
  font-size: 19px; 
  font-weight:300; 
  margin:0;
  color: #D5D5D4;
  word-wrap: break-word;}
-.Style36{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
+.Style33{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 18px; 
- font-weight:300; 
  color: #D5D5D4;
  word-wrap: break-word;}
-.Style37{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
+.Style34{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 24px; 
- font-weight:300; 
  color: #C0C0BF;
  word-wrap: break-word;}
-.Style38{font-family:  'Avenir-Black', 'Avenir' ,'Arial' ,sans-serif ;
+.Style35{font-family:  'Avenir-Black', 'Avenir' ,'Arial' ,sans-serif ;
  font-size: 40px; 
  font-weight:700; 
  color: #5D5D5D;
  word-wrap: break-word;}
-.Style39{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
+.Style36{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 18px; 
- font-weight:300; 
  color: #C0C0BF;
  word-wrap: break-word;}
-.Style40{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
+.Style37{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 18px; 
- font-weight:300; 
  color: #FEFEFE;
  word-wrap: break-word;}
-.Style41{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
+.Style38{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
  font-size: 19px; 
  font-weight:300; 
  color: #C0C0BF;
  word-wrap: break-word;}
-.Style42{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
+.Style39{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
  font-size: 19px; 
  font-weight:300; 
  margin:0;
  color: #C0C0BF;
  word-wrap: break-word;}
-.Style43{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
+.Style40{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
  font-size: 19px; 
  font-weight:300; 
  color: #FEFEFE;
  word-wrap: break-word;}
-.Style44{font-family:  'Avenir-Black', 'Avenir' ,'Arial' ,sans-serif ;
- font-size: 40px; 
- font-weight:700; 
- color: #C0C0BF;
- word-wrap: break-word;}
-.Style45{font-family:  'Helvetica' ,sans-serif ;
+.Style41{font-family:  'Helvetica' ,sans-serif ;
  font-size: 18px; 
  color: #929191;
  word-wrap: break-word;}
-.Style46{font-family:  'Helvetica' ,sans-serif ;
+.Style42{font-family:  'Helvetica' ,sans-serif ;
  font-size: 18px; 
  color: #FEFEFE;
  word-wrap: break-word;}
-.linkStyle_47{font-family:  'Helvetica' ,sans-serif ;
+.linkStyle_43{font-family:  'Helvetica' ,sans-serif ;
  font-size: 18px; 
  color: #FE7D77;
  text-decoration: underline; 
  /* 0 0 0 #00F900 #FE7D77 #FF2600 */
  word-wrap: break-word;}
-.linkStyle_47:visited{color:#FE7D77; text-decoration:underline;}
-.linkStyle_47:hover{color:#FF2600; text-decoration:underline;}
-.Style50{font-family:  'Helvetica' ,sans-serif ;
+.linkStyle_43:visited{color:#FE7D77; text-decoration:underline;}
+.linkStyle_43:hover{color:#FF2600; text-decoration:underline;}
+.Style46{font-family:  'Helvetica' ,sans-serif ;
  font-size: 18px; 
  color: #FE7D77;
  word-wrap: break-word;}
-.Style51{font-family:  'Helvetica' ,sans-serif ;
+.Style47{font-family:  'Helvetica' ,sans-serif ;
  font-size: 18px; 
  margin:0;
  color: #FEFEFE;
  word-wrap: break-word;}
-.Style52{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
+.Style48{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 22px; 
- font-weight:300; 
  color: #D5D5D4;
  word-wrap: break-word;}
-.linkStyle_53{font-family:  'Helvetica' ,sans-serif ;
+.linkStyle_49{font-family:  'Helvetica' ,sans-serif ;
  font-size: 18px; 
  margin:0;
  color: #FE7D77;
  word-wrap: break-word;}
-.linkStyle_53:visited{color:#FE7D77; text-decoration:underline;}
-.linkStyle_53:hover{color:#FF2600; text-decoration:underline;}
-.Style56{font-family:  'Avenir-Black', 'Avenir' ,'Arial' ,sans-serif ;
+.linkStyle_49:visited{color:#FE7D77; text-decoration:underline;}
+.linkStyle_49:hover{color:#FF2600; text-decoration:underline;}
+.Style52{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 70px; 
  font-weight:700; 
  color: #FE7D77;
  word-wrap: break-word;}
-.Style57{font-family:  'Arial-Black', 'Arial Black' ,sans-serif ;
+.Style53{font-family:  'Arial-Black', 'Arial Black' ,sans-serif ;
  font-size: 77px; 
  font-weight:700; 
  color: #FEFFFF;
  word-wrap: break-word;}
-.Style58{font-family:  'Avenir-Black', 'Avenir' ,'Arial' ,sans-serif ;
+.Style54{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 55px; 
  font-weight:700; 
  color: #A9A9A8;
  word-wrap: break-word;}
-.para59{font-size: 0; text-align:left; padding-bottom:0px; padding-top:21px;}
-.Style60{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
+.para55{font-size: 0; text-align:left; padding-bottom:0px; padding-top:21px;}
+.Style56{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
+ font-size: 40px; 
+ font-weight:700; 
+ color: #FE7D77;
+ word-wrap: break-word;}
+.Style57{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 22px; 
- font-weight:300; 
  margin:0;
  color: #C0C0BF;
  word-wrap: break-word;}
-.Style61{font-family:  'Avenir-Medium', 'Avenir' ,'Arial' ,sans-serif ;
+.Style58{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 18px; 
- font-weight:500; 
  color: #FEFFFF;
  word-wrap: break-word;}
-.Style62{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
+.Style59{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
  font-size: 20px; 
  font-weight:300; 
  color: #A9A9A8;
  word-wrap: break-word;}
-.linkStyle_63{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
+.linkStyle_60{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
  font-size: 20px; 
  font-weight:300; 
  color: #FE7D77;
  text-decoration: underline; 
  /* 0 0 0 #00F900 #FE7D77 #FF2600 */
  word-wrap: break-word;}
-.linkStyle_63:visited{color:#FE7D77; text-decoration:underline;}
-.linkStyle_63:hover{color:#FF2600; text-decoration:underline;}
-.Style66{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
+.linkStyle_60:visited{color:#FE7D77; text-decoration:underline;}
+.linkStyle_60:hover{color:#FF2600; text-decoration:underline;}
+.Style63{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
  font-size: 20px; 
  font-weight:300; 
  margin:0;
  color: #A9A9A8;
  word-wrap: break-word;}
-.Style67{font-family:  'ArialMT', 'Arial' ,sans-serif ;
+.Style64{font-family:  'ArialMT', 'Arial' ,sans-serif ;
  font-size: 16px; 
  color: #FEFEFE;
  word-wrap: break-word;}
-.linkStyle_68{font-family:  'Helvetica' ,sans-serif ;
+.linkStyle_65{font-family:  'Helvetica' ,sans-serif ;
  font-size: 17px; 
  color: #FE7D77;
  text-decoration: underline; 
  /* 0 0 0 #CBCBCB #942092 #FF2600 */
  word-wrap: break-word;}
-.linkStyle_68:visited{color:#FE7D77; text-decoration:underline;}
-.linkStyle_68:hover{color:#FF2600; text-decoration:underline;}
+.linkStyle_65:visited{color:#FE7D77; text-decoration:underline;}
+.linkStyle_65:hover{color:#FF2600; text-decoration:underline;}
 a.outerlink{text-decoration:none}
 .animhidden{opacity: 0}
 .animvisible{opacity: 1}
