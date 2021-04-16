@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><root><pages><page><UUID>0A360992A16C42FA978B4439DC646A0C</UUID><dateTime tmz="0">2021-04-16 15:30:01</dateTime><pageName name="home"><![CDATA[home.html]]></pageName><pagePath/><PageOrder><![CDATA[0]]></PageOrder></page><page><UUID>03536857FCB048B9AA25C5DE9EE6280B</UUID><dateTime tmz="0">2021-04-16 15:30:01</dateTime><pageName name="mobile-home"><![CDATA[mobile-home.html]]></pageName><pagePath/><PageOrder><![CDATA[1]]></PageOrder></page><page><UUID>3F6F7FB4AD4B4662AAB8FC07FA8B8B47</UUID><dateTime tmz="0">2021-04-16 15:30:01</dateTime><pageName name="mobile-work"><![CDATA[mobile-work.html]]></pageName><pagePath/><PageOrder><![CDATA[2]]></PageOrder></page><page><UUID>CAB48E7453FD434488EAF08E6F2FD057</UUID><dateTime tmz="0">2021-04-16 15:30:01</dateTime><pageName name="work"><![CDATA[work.html]]></pageName><pagePath/><PageOrder><![CDATA[3]]></PageOrder></page><page><UUID>CF66516190A448A6A2AE2B0B241E0F25</UUID><dateTime tmz="0">2021-04-16 15:30:01</dateTime><pageName name="contact"><![CDATA[contact.html]]></pageName><pagePath/><PageOrder><![CDATA[4]]></PageOrder></page></pages><siteData><siteheadercode><![CDATA[<style>
+<?xml version="1.0" encoding="UTF-8"?><root><pages><page><UUID>0A360992A16C42FA978B4439DC646A0C</UUID><dateTime tmz="0">2021-04-16 15:38:42</dateTime><pageName name="home"><![CDATA[home.html]]></pageName><pagePath/><PageOrder><![CDATA[0]]></PageOrder></page><page><UUID>03536857FCB048B9AA25C5DE9EE6280B</UUID><dateTime tmz="0">2021-04-16 15:38:42</dateTime><pageName name="mobile-home"><![CDATA[mobile-home.html]]></pageName><pagePath/><PageOrder><![CDATA[1]]></PageOrder></page><page><UUID>3F6F7FB4AD4B4662AAB8FC07FA8B8B47</UUID><dateTime tmz="0">2021-04-16 15:38:42</dateTime><pageName name="mobile-work"><![CDATA[mobile-work.html]]></pageName><pagePath/><PageOrder><![CDATA[2]]></PageOrder></page><page><UUID>CAB48E7453FD434488EAF08E6F2FD057</UUID><dateTime tmz="0">2021-04-16 15:38:42</dateTime><pageName name="work"><![CDATA[work.html]]></pageName><pagePath/><PageOrder><![CDATA[3]]></PageOrder></page><page><UUID>CF66516190A448A6A2AE2B0B241E0F25</UUID><dateTime tmz="0">2021-04-16 15:38:42</dateTime><pageName name="contact"><![CDATA[contact.html]]></pageName><pagePath/><PageOrder><![CDATA[4]]></PageOrder></page></pages><siteData><siteheadercode><![CDATA[<style>
 
 @font-face {
 font-family: "Avenir Light";
@@ -8,5 +8,10 @@ src:  url("{!-ASSETSPATH-!}External%20Files/Avenir-Light.ttf");
 @font-face {
 font-family: "Avenir Black";
 src:  url("{!-ASSETSPATH-!}External%20Files/Avenir-Black.ttf");
+}
+
+@font-face {
+font-family: "Avenir Next Regular";
+src:  url("{!-ASSETSPATH-!}External%20Files/AvenirNext-Regular.ttf");
 }
 </style>]]></siteheadercode><sitefootercode></sitefootercode></siteData></root>
