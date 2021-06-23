@@ -22,7 +22,7 @@
  word-wrap: break-word;}
 .para8{font-size: 0; text-align:center; padding-bottom:0px; margin-top:0px; padding-top:0px;}
 .Style9{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
- font-size: 24px; 
+ font-size: 22px; 
  color: #FEFFFF;
  word-wrap: break-word;}
 .Style10{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
@@ -61,10 +61,10 @@
  font-weight:300; 
  color: #FE7D77;
  text-decoration: underline; 
- /* 0 0 0 #00F900 #FE7D77 #FF2600 */
+ /* 0 0 0 #00F900 #FE7D77 #FEFEFE */
  word-wrap: break-word;}
 .linkStyle_17:visited{color:#FE7D77; text-decoration:underline;}
-.linkStyle_17:hover{color:#FF2600; text-decoration:underline;}
+.linkStyle_17:hover{color:#FEFEFE; text-decoration:underline;}
 .Style20{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 19px; 
  color: #C0C0BF;
@@ -106,124 +106,146 @@
  color: #D5D5D4;
  word-wrap: break-word;}
 .Style30{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
+ font-size: 24px; 
+ color: #FEFFFF;
+ word-wrap: break-word;}
+.Style31{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 18px; 
  color: #D5D5D4;
  word-wrap: break-word;}
-.Style31{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
+.Style32{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 24px; 
  color: #C0C0BF;
  word-wrap: break-word;}
-.Style32{font-family:  'ArialMT', 'Arial' ,sans-serif ;
+.Style33{font-family:  'ArialMT', 'Arial' ,sans-serif ;
  font-size: 18px; 
  color: #929191;
  opacity: 0.7; 
  filter:alpha(opacity=70);
  word-wrap: break-word;}
-.Style33{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
+.linkStyle_34{font-family:  'Avenir-Light', 'Avenir' ,'Arial' ,sans-serif ;
+ font-size: 17px; 
+ font-weight:300; 
+ color: #FE7D77;
+ text-decoration: underline; 
+ /* 0 0 0 #00F900 #FE7D77 #FF2600 */
+ word-wrap: break-word;}
+.linkStyle_34:visited{color:#FE7D77; text-decoration:underline;}
+.linkStyle_34:hover{color:#FF2600; text-decoration:underline;}
+.Style37{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 18px; 
  color: #C0C0BF;
  word-wrap: break-word;}
-.Style34{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
+.Style38{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 18px; 
  color: #FEFEFE;
  word-wrap: break-word;}
-.Style35{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
+.Style39{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 21px; 
  color: #A9A9A8;
  word-wrap: break-word;}
-.Style36{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
+.Style40{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 19px; 
  color: #FEFEFE;
  word-wrap: break-word;}
-.Style37{font-family:  'Helvetica' ,sans-serif ;
+.Style41{font-family:  'Helvetica' ,sans-serif ;
  font-size: 18px; 
  color: #929191;
  word-wrap: break-word;}
-.Style38{font-family:  'Helvetica' ,sans-serif ;
+.Style42{font-family:  'Helvetica' ,sans-serif ;
  font-size: 18px; 
  color: #FEFEFE;
  word-wrap: break-word;}
-.linkStyle_39{font-family:  'Helvetica' ,sans-serif ;
+.linkStyle_43{font-family:  'Helvetica' ,sans-serif ;
  font-size: 18px; 
  color: #FE7D77;
  text-decoration: underline; 
  /* 0 0 0 #00F900 #FE7D77 #FF2600 */
  word-wrap: break-word;}
-.linkStyle_39:visited{color:#FE7D77; text-decoration:underline;}
-.linkStyle_39:hover{color:#FF2600; text-decoration:underline;}
-.Style42{font-family:  'Helvetica' ,sans-serif ;
+.linkStyle_43:visited{color:#FE7D77; text-decoration:underline;}
+.linkStyle_43:hover{color:#FF2600; text-decoration:underline;}
+.Style46{font-family:  'Helvetica' ,sans-serif ;
  font-size: 18px; 
  color: #FE7D77;
  word-wrap: break-word;}
-.Style43{font-family:  'Helvetica' ,sans-serif ;
+.Style47{font-family:  'Helvetica' ,sans-serif ;
  font-size: 18px; 
  margin:0;
  color: #FEFEFE;
  word-wrap: break-word;}
-.Style44{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
+.Style48{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 22px; 
  color: #D5D5D4;
  word-wrap: break-word;}
-.linkStyle_45{font-family:  'Helvetica' ,sans-serif ;
+.linkStyle_49{font-family:  'Helvetica' ,sans-serif ;
  font-size: 18px; 
  margin:0;
  color: #FE7D77;
  word-wrap: break-word;}
-.linkStyle_45:visited{color:#FE7D77; text-decoration:underline;}
-.linkStyle_45:hover{color:#FF2600; text-decoration:underline;}
-.Style48{font-family:  'Arial-Black', 'Arial Black' ,sans-serif ;
+.linkStyle_49:visited{color:#FE7D77; text-decoration:underline;}
+.linkStyle_49:hover{color:#FF2600; text-decoration:underline;}
+.Style52{font-family:  'Arial-Black', 'Arial Black' ,sans-serif ;
  font-size: 77px; 
  font-weight:700; 
  color: #FEFFFF;
  word-wrap: break-word;}
-.Style49{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
+.Style53{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 22px; 
  margin:0;
  color: #C0C0BF;
  word-wrap: break-word;}
-.Style50{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
+.Style54{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 22px; 
  color: #FEFEFE;
  word-wrap: break-word;}
-.Style51{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
+.Style55{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 19px; 
  margin:0;
  color: #656565;
  word-wrap: break-word;}
-.para52{font-size: 0; text-align:left; padding-bottom:0px; padding-top:21px;}
-.Style53{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
+.para56{font-size: 0; text-align:left; padding-bottom:0px; padding-top:21px;}
+.Style57{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 19px; 
  color: #656565;
  word-wrap: break-word;}
-.Style54{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
+.Style58{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 18px; 
  color: #FEFFFF;
  word-wrap: break-word;}
-.Style55{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
+.linkStyle_59{font-family:  'Montserrat-Bold', 'Montserrat' ;
+ font-size: 16px; 
+ font-weight:700; 
+ color: #FE7D77;
+ text-decoration: none; 
+ /* 1 1 0 #00F900 #FE7D77 #FEFEFE */
+ word-wrap: break-word;}
+.linkStyle_59:visited{color:#FE7D77; text-decoration:none;}
+.linkStyle_59:hover{color:#FEFEFE; text-decoration:none;}
+.Style62{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 20px; 
  color: #A9A9A8;
  word-wrap: break-word;}
-.linkStyle_56{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
+.linkStyle_63{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 20px; 
  color: #FE7D77;
  text-decoration: underline; 
- /* 0 0 0 #00F900 #FE7D77 #FF2600 */
+ /* 0 0 0 #00F900 #FE7D77 #FEFEFE */
  word-wrap: break-word;}
-.linkStyle_56:visited{color:#FE7D77; text-decoration:underline;}
-.linkStyle_56:hover{color:#FF2600; text-decoration:underline;}
-.Style59{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
+.linkStyle_63:visited{color:#FE7D77; text-decoration:underline;}
+.linkStyle_63:hover{color:#FEFEFE; text-decoration:underline;}
+.Style66{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 20px; 
  margin:0;
  color: #A9A9A8;
  word-wrap: break-word;}
-.linkStyle_60{font-family:  'Helvetica' ,sans-serif ;
+.linkStyle_67{font-family:  'Helvetica' ,sans-serif ;
  font-size: 17px; 
  color: #FE7D77;
  text-decoration: underline; 
- /* 0 0 0 #CBCBCB #942092 #FF2600 */
+ /* 0 0 0 #00F900 #FE7D77 #FEFEFE */
  word-wrap: break-word;}
-.linkStyle_60:visited{color:#FE7D77; text-decoration:underline;}
-.linkStyle_60:hover{color:#FF2600; text-decoration:underline;}
+.linkStyle_67:visited{color:#FE7D77; text-decoration:underline;}
+.linkStyle_67:hover{color:#FEFEFE; text-decoration:underline;}
 a.outerlink{text-decoration:none}
 .animhidden{opacity: 0}
 .animvisible{opacity: 1}
