@@ -228,39 +228,3 @@
 a.outerlink{text-decoration:none}
 .animhidden{opacity: 0}
 .animvisible{opacity: 1}
-.Style68{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
- font-size: 22px; 
- color: #FFFEFE;
- word-wrap: break-word;}
-.Style69{font-family:  'AvenirNext-Bold', 'Avenir Next' ;
- font-size: 35px; 
- font-weight:700; 
- color: #FEFEFE;
- word-wrap: break-word;}
-.Style70{font-family:  'AvenirNext-Bold', 'Avenir Next' ;
- font-size: 35px; 
- font-weight:700; 
- color: #5E5E5D;
- word-wrap: break-word;}
-.Style71{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
- font-size: 24px; 
- color: #FFFEFE;
- word-wrap: break-word;}
-.Style72{font-family:  'Arial-Black', 'Arial Black' ,sans-serif ;
- font-size: 77px; 
- font-weight:700; 
- color: #FFFEFE;
- word-wrap: break-word;}
-.Style73{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
- font-size: 18px; 
- color: #FFFEFE;
- word-wrap: break-word;}
-.linkStyle_74{font-family:  'AvenirNext-Bold', 'Avenir Next' ;
- font-size: 16px; 
- font-weight:700; 
- color: #FE7D77;
- text-decoration: none; 
- /* 1 1 0 #00F900 #FE7D77 #FEFEFE */
- word-wrap: break-word;}
-.linkStyle_74:visited{color:#FE7D77; text-decoration:none;}
-.linkStyle_74:hover{color:#FEFEFE; text-decoration:none;}
