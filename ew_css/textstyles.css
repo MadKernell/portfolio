@@ -23,18 +23,18 @@
 .para8{font-size: 0; text-align:center; padding-bottom:0px; margin-top:0px; padding-top:0px;}
 .Style9{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 22px; 
- color: #FEFFFF;
+ color: #FFFEFE;
  word-wrap: break-word;}
 .Style10{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 20px; 
  color: #C0C0BF;
  word-wrap: break-word;}
-.Style11{font-family:  'Montserrat-ExtraBold', 'Montserrat' ;
+.Style11{font-family:  'AvenirNext-Bold', 'Avenir Next' ;
  font-size: 35px; 
  font-weight:700; 
  color: #FEFEFE;
  word-wrap: break-word;}
-.Style12{font-family:  'Montserrat-ExtraBold', 'Montserrat' ;
+.Style12{font-family:  'AvenirNext-Bold', 'Avenir Next' ;
  font-size: 35px; 
  font-weight:700; 
  color: #5E5E5D;
@@ -102,7 +102,7 @@
  word-wrap: break-word;}
 .Style29{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 24px; 
- color: #FEFFFF;
+ color: #FFFEFE;
  word-wrap: break-word;}
 .Style30{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 22px; 
@@ -168,7 +168,7 @@
 .Style46{font-family:  'Arial-Black', 'Arial Black' ,sans-serif ;
  font-size: 77px; 
  font-weight:700; 
- color: #FEFFFF;
+ color: #FFFEFE;
  word-wrap: break-word;}
 .Style47{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 19px; 
@@ -182,7 +182,7 @@
  word-wrap: break-word;}
 .Style50{font-family:  'AvenirNext-Regular', 'Avenir Next' ;
  font-size: 18px; 
- color: #FEFFFF;
+ color: #FFFEFE;
  word-wrap: break-word;}
 .linkStyle_51{font-family:  'Helvetica' ,sans-serif ;
  font-size: 18px; 
@@ -191,7 +191,7 @@
  word-wrap: break-word;}
 .linkStyle_51:visited{color:#FE7D77; text-decoration:underline;}
 .linkStyle_51:hover{color:#FF2600; text-decoration:underline;}
-.linkStyle_54{font-family:  'Montserrat-Bold', 'Montserrat' ;
+.linkStyle_54{font-family:  'AvenirNext-Bold', 'Avenir Next' ;
  font-size: 16px; 
  font-weight:700; 
  color: #FE7D77;
