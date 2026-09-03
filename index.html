@@ -2627,24 +2627,14 @@ function openVideo(c){
   stage.querySelectorAll('img.galimg').forEach(n=>n.remove());
   $('#vidtitle').innerHTML='Now playing — <b>'+c.title+'</b>';
   $('#vidext').hidden=false;$('#vidext').href=c.link;
-  // Play the reel from the page itself. A YouTube iframe silently fails when the
-  // file is opened locally (file:// is not a valid embed origin), which is why
-  // the popup came up empty. The link out to YouTube stays in the footer.
-  const localFile=location.protocol==='file:';
+  // Every YouTube-backed project uses the same inline player. The external
+  // YouTube link remains available in the footer as an optional fallback.
   stage.querySelectorAll('video,iframe,.vfallback,img.galimg').forEach(n=>n.remove());
   const put=h=>stage.insertAdjacentHTML('afterbegin',h);
   if(c.vidFull){
     put('<video src="'+c.vidFull+'" controls autoplay playsinline preload="auto"></video>');
-  }else if(localFile){
-    // YouTube refuses to play from a file:// origin, so show the real thumbnail
-    // and hand the visitor straight to the video instead of a dead player.
-    put('<div class="vfallback">'
-      +'<img src="https://img.youtube.com/vi/'+c.vidEmbed+'/hqdefault.jpg" alt="" onerror="this.remove()">'
-      +'<div class="vfin"><a href="'+c.link+'" target="_blank" rel="noopener">'
-      +'<span class="vplay">▶</span><span class="vlabel">Play on YouTube</span></a>'
-      +'<span class="vwhy">This copy is running from your hard drive. YouTube only plays once the page is on a real domain — everything else here works offline.</span></div></div>');
   }else{
-    put('<iframe src="https://www.youtube.com/embed/'+c.vidEmbed+'?autoplay=1&rel=0&modestbranding=1&playsinline=1" title="'+c.title+'" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>');
+    put('<iframe src="https://www.youtube-nocookie.com/embed/'+c.vidEmbed+'?autoplay=1&rel=0&modestbranding=1&playsinline=1" title="'+c.title+'" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>');
   }
   const lv=stage.querySelector('video');
   if(lv){lv.volume=0.9;const pr=lv.play();if(pr&&pr.catch)pr.catch(()=>{lv.muted=true;lv.play().catch(()=>{})})}
