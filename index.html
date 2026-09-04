@@ -557,10 +557,10 @@ section{position:relative;padding:110px 0}
 #nameSkip.on{opacity:1}
 #nameSkip:hover{color:#171410}
 @media (max-width:620px){
-  /* phone: tighten tracking rather than break the line */
-  #nameWords{gap:0 min(1.55vw,7px);margin-top:22px}
-  #nameWords span{font-size:min(2.15vw,9px);letter-spacing:.04em}
-  #nameWords span+span::before{margin-right:min(1.55vw,7px);height:.8em}
+  /* phone: stack the disciplines as a large, centered reading list */
+  #nameWords{width:100%;flex-direction:column;align-items:center;gap:10px;margin-top:28px;white-space:normal}
+  #nameWords span{font-size:clamp(17px,5vw,21px);line-height:1.15;letter-spacing:.1em;text-align:center;white-space:normal}
+  #nameWords span+span::before{display:none}
   #nameSkip{bottom:-38px}
 }
 
