@@ -821,6 +821,7 @@ section{position:relative;padding:110px 0}
 
 /* ============ lightbox: gallery + case study ============ */
 .galnav{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:rgba(18,16,12,.82);border:1px solid var(--hair-strong);color:var(--bone);font-size:19px;display:flex;align-items:center;justify-content:center;z-index:3;transition:all .25s var(--e-out)}
+.galnav[hidden]{display:none}
 .galnav:hover{border-color:var(--acc);color:var(--acc);transform:translateY(-50%) scale(1.08)}
 .galnav:disabled{opacity:.28;cursor:default;transform:translateY(-50%)}
 .galnav.prev{left:14px}.galnav.next{right:14px}
