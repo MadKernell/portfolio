@@ -1487,11 +1487,11 @@ body.customcur #bcur{display:block}
       <div class="cfield"><label for="cmsg">What do you need?</label><textarea id="cmsg" name="message" rows="3" required></textarea></div>
       <div id="cerr" role="alert"></div>
       <button class="btn solid" id="csend" type="submit">Send it</button>
-      <p id="cmeta">goes straight to suarezl@gmail.com · no list, no newsletter</p>
+      <p id="cmeta">goes straight to my inbox · no list, no newsletter</p>
     </form>
     <div id="cdone">
-      <div class="ok">Handing it to your mail app.</div>
-      <p>If nothing opened, copy the message and send it to <b style="color:var(--bone)">suarezl@gmail.com</b>.</p>
+      <div class="ok">Message sent.</div>
+      <p>Thanks — it went straight to my inbox.</p>
       <button class="btn" id="ccopy" type="button">Copy the message</button>
     </div>
   </div>
@@ -2514,7 +2514,7 @@ $('#cform').addEventListener('submit',async e=>{
     pad(PFREQ[S.persona]||220,1.6,.06);
     log('direct line: <b>message delivered</b> — nice.');
   }catch(ex){
-    $('#cerr').textContent='Couldn\'t send that. Please try again or email '+MAILTO+'.';
+    $('#cerr').textContent='Couldn\'t send that. Please try again in a moment.';
     tone(220,.16,.05,'triangle');
   }finally{
     send.disabled=false;send.textContent='Send it';
