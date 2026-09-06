@@ -412,6 +412,7 @@ section{position:relative;padding:110px 0}
 .mcard .go{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin-top:auto}
 
 /* journey */
+#journey .journey-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:clamp(28px,5vw,76px);align-items:start}
 #journey .tl{position:relative;padding-left:36px;max-width:820px}
 #journey .tl::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:1px;background:var(--hair-strong)}
 #journey .tl .draw{position:absolute;left:8px;top:6px;width:1px;background:var(--acc);height:0;transition:height 1.4s var(--e-in-out)}
@@ -420,6 +421,25 @@ section{position:relative;padding:110px 0}
 #journey .era .yrs{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--acc)}
 #journey .era h4{font-family:var(--disp);font-weight:660;font-variation-settings:'wght' 660;font-size:22px;margin:6px 0 4px}
 #journey .era p{color:var(--bone-70);font-size:14.5px;max-width:58ch}
+#journey .companies{position:sticky;top:92px;border:1px solid var(--hair-strong);background:var(--ground-2);padding:22px}
+#journey .companies-label{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--bone-45);margin-bottom:16px}
+#journey .company-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair)}
+#journey .company{min-height:126px;background:var(--ground);padding:18px 14px 14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;text-align:center}
+#journey .company img{display:block;width:100%;height:54px;object-fit:contain;opacity:.88}
+#journey .company span{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--bone-45)}
+@media (max-width:900px) and (min-width:621px){
+  #journey .journey-layout{gap:22px;grid-template-columns:minmax(0,1fr) minmax(270px,.82fr)}
+  #journey .companies{padding:14px}
+  #journey .company{min-height:112px;padding:14px 10px 11px}
+  #journey .company img{height:46px}
+}
+@media (max-width:620px){
+  #journey .journey-layout{grid-template-columns:1fr;gap:32px}
+  #journey .companies{position:static;padding:14px}
+  #journey .company-grid{grid-template-columns:1fr}
+  #journey .company{min-height:116px;padding:16px 18px 13px}
+  #journey .company img{height:58px;max-width:280px}
+}
 
 /* toolkit */
 #toolkit .groups{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
@@ -1325,8 +1345,21 @@ body.customcur #bcur{display:block}
     <div class="wrap">
       <div class="tblock rv"><div>Sheet <b>03</b></div><div>Subject — <b>The journey</b></div><div>Span <b>1998 → now</b></div><div class="accd">Status — Ongoing</div></div>
       <h2 class="rv" style="margin-bottom:50px">Two decades of making.</h2>
-      <div class="tl" id="timeline">
-        <div class="draw" id="tldraw"></div>
+      <div class="journey-layout">
+        <div class="tl" id="timeline">
+          <div class="draw" id="tldraw"></div>
+        </div>
+        <aside class="companies rv" aria-label="Selected companies Luis has worked for">
+          <p class="companies-label">Selected companies</p>
+          <div class="company-grid">
+            <div class="company"><img src="assets/logos/medallia.svg" alt="Medallia"><span>(CX)</span></div>
+            <div class="company"><img src="assets/logos/mycom.svg" alt="MyCOM"><span>(Fintech)</span></div>
+            <div class="company"><img src="assets/logos/sybase.svg" alt="Sybase Venezuela"><span>(IT)</span></div>
+            <div class="company"><img src="assets/logos/pdvsa.svg" alt="PDVSA"><span>(Oil &amp; Gas)</span></div>
+            <div class="company"><img src="assets/logos/evolving.svg" alt="Evolving Software"><span>(IT)</span></div>
+            <div class="company"><img src="assets/logos/urbe.svg" alt="URBE University"><span>(Education)</span></div>
+          </div>
+        </aside>
       </div>
     </div>
   </section>
