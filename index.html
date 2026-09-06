@@ -107,8 +107,8 @@ img,svg{display:block}
 #doors .lead h2{font-family:var(--disp);font-weight:560;font-variation-settings:'wght' 560;font-size:clamp(14px,3.45vw,44px);line-height:1.12;white-space:nowrap}
 #doors .lead p{color:var(--ink-55);margin:16px auto 0;font-size:15px;max-width:640px}
 .doorgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;width:min(1080px,94vw)}
-.door{--dacc:#7B6CFF;position:relative;text-align:left;background:transparent;border:1px solid var(--ink-30);padding:0;min-height:216px;display:flex;flex-direction:column;color:var(--ink);transition:transform .45s var(--e-out),border-color .3s,box-shadow .45s var(--e-out);opacity:0;transform:translateY(22px)}
-#doors.on .door{opacity:1;transform:none;transition:opacity .7s var(--e-out) var(--dd,0s),transform .7s var(--e-out) var(--dd,0s),border-color .3s,box-shadow .45s var(--e-out)}
+.door{--dacc:#7B6CFF;position:relative;text-align:left;background-color:transparent;border:1px solid var(--ink-30);padding:0;min-height:216px;display:flex;flex-direction:column;color:var(--ink);transition:transform .45s var(--e-out),border-color .3s,box-shadow .45s var(--e-out),background-color .45s var(--e-out);opacity:0;transform:translateY(22px)}
+#doors.on .door{opacity:1;transform:none;transition:opacity .7s var(--e-out) var(--dd,0s),transform .7s var(--e-out) var(--dd,0s),border-color .3s,box-shadow .45s var(--e-out),background-color .45s var(--e-out)}
 .door::before{content:"";position:absolute;inset:6px;border:1px dashed var(--line);pointer-events:none;transition:border-color .3s,opacity .3s}
 .door .dbody{padding:24px 22px 18px;flex:1;display:flex;flex-direction:column}
 .door .no{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--ink-55)}
@@ -117,7 +117,7 @@ img,svg{display:block}
 .door .go{position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:center;gap:8px;padding:16px 22px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);border-top:1px solid transparent;transition:color .35s var(--e-out) .08s}
 .door .go::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--dacc);transform:scaleY(0);transform-origin:bottom;transition:transform .45s var(--e-out)}
 .door .go::after{content:"→";transition:transform .3s var(--e-out)}
-.door:hover,.door:focus-visible{transform:translateY(-5px);border-color:var(--dacc);box-shadow:0 14px 34px -18px var(--dacc),inset 0 0 0 1px var(--dacc)}
+.door:hover,.door:focus-visible{transform:translateY(-5px);border-color:var(--dacc);background-color:var(--paper);box-shadow:0 14px 34px -18px var(--dacc),inset 0 0 0 1px var(--dacc)}
 .door:hover::before,.door:focus-visible::before{opacity:0}
 .door:hover .go::before,.door:focus-visible .go::before{transform:scaleY(1)}
 .door:hover .go,.door:focus-visible .go{color:var(--paper)}
@@ -906,7 +906,7 @@ section{position:relative;padding:110px 0}
 @media (max-width:620px){
   /* ---- MOBILE: fewer moving parts, bigger targets, same story ---- */
   .doorgrid{grid-template-columns:1fr;gap:12px;width:100%}
-  .door{min-height:0}
+  .door{min-height:0;background-color:var(--paper)}
   .door .dbody{padding:16px 18px 12px}
   .door h3{margin:8px 0 5px;font-size:20px}
   .door p{font-size:13px}
