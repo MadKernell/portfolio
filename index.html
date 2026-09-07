@@ -971,6 +971,10 @@ section{position:relative;padding:110px 0}
   /* Case studies: phones show the finished work without a drag interaction */
   .chapter .morph{width:90vw;max-width:90vw;margin-left:calc(50% - 45vw);cursor:default;touch-action:auto}
   .chapter .morph .built{clip-path:inset(0)!important}
+  .chapter .morph .layer.photo,
+  .chapter .morph .layer.vid{background:#0d0c0a}
+  .chapter .morph .layer.photo img,
+  .chapter .morph .layer.vid video{object-fit:contain;object-position:center}
   .chapter .morph .draftl,
   .chapter .morph .seam,
   .chapter .morph .knob,
@@ -2357,6 +2361,24 @@ function initMorph(m,chEl,c){
   const cos=chEl.querySelectorAll('.co');const asm=m.querySelectorAll('.asm');
   const phoneBreakpoint=matchMedia('(max-width:620px)');
   const isPhoneStatic=()=>phoneBreakpoint.matches;
+  const builtMedia=built.querySelector('img,video');
+  const syncPhoneMediaAspect=()=>{
+    if(!isPhoneStatic()||!builtMedia){m.style.removeProperty('aspect-ratio');return}
+    const w=builtMedia.naturalWidth||builtMedia.videoWidth;
+    const h=builtMedia.naturalHeight||builtMedia.videoHeight;
+    if(w&&h)m.style.aspectRatio=w+' / '+h;
+  };
+  if(builtMedia){
+    builtMedia.addEventListener(builtMedia.tagName==='VIDEO'?'loadedmetadata':'load',syncPhoneMediaAspect);
+    if(builtMedia.complete||builtMedia.readyState>=1)syncPhoneMediaAspect();
+    if(phoneBreakpoint.addEventListener){
+      const syncBreakpoint=()=>{
+        if(!m.isConnected){phoneBreakpoint.removeEventListener('change',syncBreakpoint);return}
+        syncPhoneMediaAspect();
+      };
+      phoneBreakpoint.addEventListener('change',syncBreakpoint);
+    }
+  }
   m._p=0;m._max=0;m._done=false;m._auto=false;
   const TH=[.22,.58,.92];
   function setP(p,user){
