@@ -3320,7 +3320,8 @@ function renderVitru(p){
 function journeyScrub(){
   if(!S.built)return;
   const tl=$('#timeline');const r=tl.getBoundingClientRect();
-  const prog=clamp((innerHeight*.78-r.top)/r.height,0,1);
+  // Keep the live edge of the accent at the viewport midpoint as the section passes it.
+  const prog=clamp((innerHeight*.5-r.top)/r.height,0,1);
   $('#tldraw').style.height=(prog*100)+'%';
   tl.querySelectorAll('.era').forEach(e=>e.classList.toggle('lit',e.offsetTop+14<=prog*tl.offsetHeight));
 }
