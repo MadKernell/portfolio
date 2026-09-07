@@ -968,6 +968,15 @@ section{position:relative;padding:110px 0}
   .morph .knob{width:62px;height:62px}
   .morph .hintlab{top:calc(50% + 48px);font-size:10px}
 
+  /* EG case study: phones show the finished site without a drag interaction */
+  .chapter[data-k="eg"] .morph{width:90vw;max-width:90vw;margin-left:calc(50% - 45vw);cursor:default;touch-action:auto}
+  .chapter[data-k="eg"] .morph .built{clip-path:inset(0)!important}
+  .chapter[data-k="eg"] .morph .draftl,
+  .chapter[data-k="eg"] .morph .seam,
+  .chapter[data-k="eg"] .morph .knob,
+  .chapter[data-k="eg"] .morph .hintlab,
+  .chapter[data-k="eg"] .morph .statelab.l{display:none}
+
   /* lightboxes go full-bleed */
   #vidmodal{padding:0}
   #vidmodal .vwrap{width:100%}
@@ -2346,6 +2355,8 @@ function makeChapter(k,i){
 function initMorph(m,chEl,c){
   const built=m.querySelector('.built'),seam=m.querySelector('.seam'),knob=m.querySelector('.knob');
   const cos=chEl.querySelectorAll('.co');const asm=m.querySelectorAll('.asm');
+  const phoneBreakpoint=matchMedia('(max-width:620px)');
+  const isPhoneStatic=()=>phoneBreakpoint.matches&&chEl.dataset.k==='eg';
   m._p=0;m._max=0;m._done=false;m._auto=false;
   const TH=[.22,.58,.92];
   function setP(p,user){
@@ -2365,16 +2376,17 @@ function initMorph(m,chEl,c){
   m._setP=setP;
   let drag=false;
   const fromEvent=e=>{const r=m.getBoundingClientRect();return (e.clientX-r.left)/r.width};
-  m.addEventListener('pointerdown',e=>{if(e.target.closest('a'))return;drag=true;m.classList.add('touched','grabbing');m.setPointerCapture(e.pointerId);setP(fromEvent(e),true)});
+  m.addEventListener('pointerdown',e=>{if(isPhoneStatic()||e.target.closest('a'))return;drag=true;m.classList.add('touched','grabbing');m.setPointerCapture(e.pointerId);setP(fromEvent(e),true)});
   m.addEventListener('pointermove',e=>{if(drag)setP(fromEvent(e),true)});
   const up=()=>{drag=false;m.classList.remove('grabbing')};
   m.addEventListener('pointerup',up);m.addEventListener('pointercancel',up);
   knob.addEventListener('keydown',e=>{
+    if(isPhoneStatic())return;
     const step=e.shiftKey?.15:.05;
     if(e.key==='ArrowRight'||e.key==='ArrowUp'){setP(m._p+step,true);e.preventDefault();m.classList.add('touched')}
     if(e.key==='ArrowLeft'||e.key==='ArrowDown'){setP(m._p-step,true);e.preventDefault()}
   });
-  setP(0);
+  setP(isPhoneStatic()?1:0);
   // only run the video while it is actually on screen
   const vid=m.querySelector('video');
   if(vid){
@@ -2403,7 +2415,7 @@ function initMorph(m,chEl,c){
       });
     }
     const io=new IntersectionObserver(en=>{
-      en.forEach(x=>{if(x.isIntersecting&&!m._auto&&!m.classList.contains('touched')){
+      en.forEach(x=>{if(x.isIntersecting&&!isPhoneStatic()&&!m._auto&&!m.classList.contains('touched')){
         m._auto=true;io.disconnect();
         setTimeout(()=>demo(()=>{ setTimeout(()=>demo(),5200) }),350);
       }})
