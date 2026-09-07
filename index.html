@@ -968,14 +968,14 @@ section{position:relative;padding:110px 0}
   .morph .knob{width:62px;height:62px}
   .morph .hintlab{top:calc(50% + 48px);font-size:10px}
 
-  /* EG case study: phones show the finished site without a drag interaction */
-  .chapter[data-k="eg"] .morph{width:90vw;max-width:90vw;margin-left:calc(50% - 45vw);cursor:default;touch-action:auto}
-  .chapter[data-k="eg"] .morph .built{clip-path:inset(0)!important}
-  .chapter[data-k="eg"] .morph .draftl,
-  .chapter[data-k="eg"] .morph .seam,
-  .chapter[data-k="eg"] .morph .knob,
-  .chapter[data-k="eg"] .morph .hintlab,
-  .chapter[data-k="eg"] .morph .statelab.l{display:none}
+  /* Case studies: phones show the finished work without a drag interaction */
+  .chapter .morph{width:90vw;max-width:90vw;margin-left:calc(50% - 45vw);cursor:default;touch-action:auto}
+  .chapter .morph .built{clip-path:inset(0)!important}
+  .chapter .morph .draftl,
+  .chapter .morph .seam,
+  .chapter .morph .knob,
+  .chapter .morph .hintlab,
+  .chapter .morph .statelab.l{display:none}
 
   /* lightboxes go full-bleed */
   #vidmodal{padding:0}
@@ -2356,7 +2356,7 @@ function initMorph(m,chEl,c){
   const built=m.querySelector('.built'),seam=m.querySelector('.seam'),knob=m.querySelector('.knob');
   const cos=chEl.querySelectorAll('.co');const asm=m.querySelectorAll('.asm');
   const phoneBreakpoint=matchMedia('(max-width:620px)');
-  const isPhoneStatic=()=>phoneBreakpoint.matches&&chEl.dataset.k==='eg';
+  const isPhoneStatic=()=>phoneBreakpoint.matches;
   m._p=0;m._max=0;m._done=false;m._auto=false;
   const TH=[.22,.58,.92];
   function setP(p,user){
