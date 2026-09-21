@@ -1164,6 +1164,9 @@ body.customcur #bcur{display:block}
 .sigwrap{position:relative;background:var(--paper);border:1px solid var(--hair-strong);padding:10px;box-shadow:0 14px 40px -22px rgba(0,0,0,.8)}
 #sigpad{display:block;max-width:100%;height:auto;cursor:crosshair;touch-action:none}
 .sigwrap .handglyph{font-size:15px;margin-right:6px}
+.sigwrap #siglab{opacity:1;transition:opacity .3s ease}
+.sigwrap.is-signing #siglab{opacity:0}
+@media(prefers-reduced-motion:reduce){.sigwrap #siglab{transition:none}}
 .sigwrap .sigrule{position:absolute;left:24px;right:24px;bottom:34px;border-bottom:1px dashed rgba(23,20,16,.3);pointer-events:none}
 
 /* ============ collectible tokens (curious build) ============ */
@@ -3427,11 +3430,11 @@ let sigHas=false;
   g.strokeStyle='#171410';g.lineWidth=2.4;g.lineCap='round';g.lineJoin='round';
   let down=false,px=0,py=0;
   const pos=e=>{const r=c.getBoundingClientRect();return[(e.clientX-r.left)*(c.width/r.width),(e.clientY-r.top)*(c.height/r.height)]};
-  c.addEventListener('pointerdown',e=>{down=true;[px,py]=pos(e);c.setPointerCapture(e.pointerId)});
+  c.addEventListener('pointerdown',e=>{c.parentElement.classList.add('is-signing');down=true;[px,py]=pos(e);c.setPointerCapture(e.pointerId)});
   c.addEventListener('pointermove',e=>{if(!down)return;const[x,y]=pos(e);g.beginPath();g.moveTo(px,py);g.lineTo(x,y);g.stroke();px=x;py=y;
     if(!sigHas){sigHas=true;log('mark received — <b>very human</b> of you');scratch()}});
   const up=()=>down=false;c.addEventListener('pointerup',up);c.addEventListener('pointercancel',up);
-  $('#sigclear').addEventListener('click',()=>{g.clearRect(0,0,c.width,c.height);sigHas=false;click()});
+  $('#sigclear').addEventListener('click',()=>{g.clearRect(0,0,c.width,c.height);sigHas=false;c.parentElement.classList.remove('is-signing');click()});
 })();
 
 /* ================= collectible sparks — curious build only ================= */
