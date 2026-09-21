@@ -1089,7 +1089,10 @@ body.customcur #bcur{display:block}
 .sg-head b{color:var(--acc);font-weight:500}
 .sg-side{display:flex;flex-direction:column}
 .sg-bio{padding:24px 26px;border-bottom:1px solid var(--hair);color:var(--bone-70);font-size:14.5px;line-height:1.65}
-#vfact{border:0;border-bottom:1px solid var(--hair);border-left:3px solid var(--acc);padding:20px 24px;margin:0;min-height:118px;transition:opacity .28s var(--e-out),transform .28s var(--e-out)}
+#vfact{display:grid;flex-shrink:0;border:0;border-bottom:1px solid var(--hair);border-left:3px solid var(--acc);padding:20px 24px;margin:0;min-height:118px;transition:opacity .28s var(--e-out),transform .28s var(--e-out)}
+/* All descriptions share one grid cell, reserving the tallest at every width. */
+#vfact .vfact-panel{grid-area:1 / 1;min-width:0;visibility:hidden}
+#vfact .vfact-panel.is-active{visibility:visible}
 #vfact.swap{opacity:0;transform:translateY(7px)}
 #vfact .k{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--acc);margin-bottom:7px}
 #vfact p{font-size:13.5px;color:var(--bone-70);line-height:1.6;margin:0;max-width:none}
@@ -3287,7 +3290,8 @@ function renderVitru(p){
   const v=$('#vitru');
   const fb0=$('#vfact');
   fb0.classList.remove('swap');
-  fb0.innerHTML='<div class="k">The human blueprint</div><p>Four glowing points on the figure. Hover or tap them — this is the part templates can\u2019t copy.</p>';
+  const facts={intro:['The human blueprint','Four glowing points on the figure. Hover or tap them — this is the part templates can\u2019t copy.'],...VFACTS};
+  fb0.innerHTML=Object.entries(facts).map(([key,fact])=>'<div class="vfact-panel'+(key==='intro'?' is-active':'')+'" data-fact="'+key+'" aria-hidden="'+(key!=='intro')+'"><div class="k">'+fact[0]+'</div><p>'+fact[1]+'</p></div>').join('');
   const hot=(f,x,y)=>'<g class="vhot" data-f="'+f+'" tabindex="0" role="button" aria-label="'+VFACTS[f][0]+'" aria-pressed="false" aria-controls="vfact"><circle class="focus-ring" cx="'+x+'" cy="'+y+'" r="15"/><circle class="halo" cx="'+x+'" cy="'+y+'" r="6"/><circle class="pt" cx="'+x+'" cy="'+y+'" r="4"/><circle cx="'+x+'" cy="'+y+'" r="24" fill="transparent"/></g>';
   v.innerHTML='<div class="vstage"><svg viewBox="0 0 500 500" role="group" aria-label="The human blueprint. Explore the head, heart and hands.">'
    +'<image class="v-art" href="assets/vitruvian-blueprint.webp" width="500" height="500" aria-label="Geometric Vitruvian Man in a construction circle and square"/>'
@@ -3313,7 +3317,7 @@ function renderVitru(p){
     v.querySelectorAll('[data-part="'+f+'"]').forEach(e=>e.classList.add('sel'));
     const fb=$('#vfact');
     fb.classList.add('swap');
-    later(()=>{if(cur!==f)return;fb.innerHTML='<div class="k">'+VFACTS[f][0]+'</div><p>'+VFACTS[f][1]+'</p>';fb.classList.remove('swap')},REDUCED?0:220);
+    later(()=>{if(cur!==f)return;fb.querySelectorAll('.vfact-panel').forEach(panel=>{const active=panel.dataset.fact===f;panel.classList.toggle('is-active',active);panel.setAttribute('aria-hidden',String(!active))});fb.classList.remove('swap')},REDUCED?0:220);
     if(user){userTouched=true;tick();if(!told){told=true;log('figure 01: <b>annotated</b> — the human checks out')}}
   }
   v.querySelectorAll('.vchoice,.vhot').forEach(h=>{
