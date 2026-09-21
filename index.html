@@ -1095,6 +1095,20 @@ body.customcur #bcur{display:block}
 #vfact p{font-size:13.5px;color:var(--bone-70);line-height:1.6;margin:0;max-width:none}
 .sg-side .stats{border:0;flex:1}
 #vitru svg{width:100%;max-width:none;display:block}
+#vitru .vstage{position:relative;overflow:hidden;background:#12110d}
+#vitru .vfocus{fill:none;stroke:var(--acc);stroke-width:2;opacity:0;transition:opacity .3s;pointer-events:none}
+#vitru .vfocus.sel{opacity:.8}
+#vitru .vhot:focus-visible{outline:none}
+#vitru .vhot:focus-visible .focus-ring{opacity:1}
+#vitru .focus-ring{fill:none;stroke:var(--bone);stroke-width:2;opacity:0}
+#vitru .vchoices{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:14px}
+#vitru .vchoice{min-height:44px;padding:10px;border:1px solid var(--hair-strong);font:10px var(--mono);letter-spacing:.08em;text-align:left;color:var(--bone-70);transition:background .25s,border-color .25s,color .25s}
+#vitru .vchoice:hover,#vitru .vchoice[aria-pressed="true"]{border-color:var(--acc);background:var(--acc-08);color:var(--acc)}
+#vitru button:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+#vitru .vfooter{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px;font:9px var(--mono);letter-spacing:.1em;color:var(--bone-45)}
+#vitru .vreplay{min-height:44px;color:var(--acc);font:10px var(--mono);letter-spacing:.1em}
+#vitru .vscan{stroke:var(--acc);stroke-width:1;opacity:0;pointer-events:none}
+@media(prefers-reduced-motion:reduce){#vitru *,#vitru .halo{animation:none!important;transition:none!important}}
 #vitru .vl{stroke:var(--bone);stroke-width:1.3;fill:none;stroke-linecap:round;transition:stroke .4s}
 #vitru .vl.sel{stroke:var(--acc)}
 #vitru .vc{stroke:var(--hair-strong);stroke-width:1;fill:none;stroke-dasharray:5 7}
@@ -3274,28 +3288,20 @@ function renderVitru(p){
   const fb0=$('#vfact');
   fb0.classList.remove('swap');
   fb0.innerHTML='<div class="k">The human blueprint</div><p>Four glowing points on the figure. Hover or tap them — this is the part templates can\u2019t copy.</p>';
-  const anno=(f,leader,lx,ly,txt,anchor)=>'<g class="vanno" data-f="'+f+'" tabindex="0" role="button" aria-label="'+VFACTS[f][0]+'">'
-    +'<path class="vld" d="'+leader+'"/>'
-    +'<text class="vlabel" x="'+lx+'" y="'+ly+'"'+(anchor?' text-anchor="'+anchor+'"':'')+'>'+txt+'</text></g>';
-  const hot=(f,x,y)=>'<g class="vhot" data-f="'+f+'"><circle class="halo" cx="'+x+'" cy="'+y+'" r="6"/><circle class="pt" cx="'+x+'" cy="'+y+'" r="4"/><circle cx="'+x+'" cy="'+y+'" r="18" fill="transparent"/></g>';
-  v.innerHTML='<svg viewBox="0 0 460 408" role="img" aria-label="A Vitruvian-style construction drawing of the designer. Explore the four annotated points.">'
-   +'<g class="vring"><circle class="vc" cx="230" cy="202" r="146"/></g>'
-   +'<rect class="vc" x="118" y="90" width="224" height="224"/>'
-   +'<line class="vc" x1="230" y1="36" x2="230" y2="378"/><line class="vc" x1="66" y1="202" x2="394" y2="202"/>'
-   +'<circle class="vl" data-part="head" cx="230" cy="112" r="16"/>'
-   +'<path class="vl" d="M230 129 L230 244"/>'
-   +'<path class="vl" data-part="handL" d="M154 172 L230 152"/><path class="vl" data-part="handR" d="M230 152 L306 172"/>'
-   +'<path class="vl" data-part="handL" d="M150 124 L230 152"/><path class="vl" data-part="handR" d="M230 152 L310 124"/>'
-   +'<path class="vl" d="M230 244 L198 324"/><path class="vl" d="M230 244 L262 324"/>'
-   +'<path class="vl" d="M230 244 L172 310"/><path class="vl" d="M230 244 L288 310"/>'
-   +'<circle class="vl" data-part="heart" cx="230" cy="190" r="4.5"/>'
-   +anno('head','M230 92 L230 58 L298 58',304,62,'SYSTEMS THINKING')
-   +anno('heart','M238 190 L342 190',348,194,'HUMAN DESIGN')
-   +anno('handL','M148 168 L112 142',106,138,'THE MAKING HAND','end')
-   +anno('handR','M310 178 L348 266',338,284,'THE TEACHING HAND')
-   +hot('head',230,94)+hot('heart',230,190)+hot('handL',154,172)+hot('handR',306,172)
-   +'<text class="vlab" x="230" y="400" text-anchor="middle">homo faber · span = 20 yrs · revised daily</text>'
-   +'</svg>';
+  const hot=(f,x,y)=>'<g class="vhot" data-f="'+f+'" tabindex="0" role="button" aria-label="'+VFACTS[f][0]+'" aria-pressed="false" aria-controls="vfact"><circle class="focus-ring" cx="'+x+'" cy="'+y+'" r="15"/><circle class="halo" cx="'+x+'" cy="'+y+'" r="6"/><circle class="pt" cx="'+x+'" cy="'+y+'" r="4"/><circle cx="'+x+'" cy="'+y+'" r="24" fill="transparent"/></g>';
+  v.innerHTML='<div class="vstage"><svg viewBox="0 0 500 500" role="group" aria-label="The human blueprint. Explore the head, heart and hands.">'
+   +'<image class="v-art" href="assets/vitruvian-blueprint.webp" width="500" height="500" aria-label="Geometric Vitruvian Man in a construction circle and square"/>'
+   +'<circle class="vtrace" cx="250" cy="241" r="224" fill="none" stroke="var(--acc)" stroke-width="1" opacity="0"/>'
+   +'<path class="vtrace" d="M52 52 H448 V436 H52 Z" fill="none" stroke="var(--bone)" stroke-width="1" opacity="0"/>'
+   +'<path class="vfocus" data-part="head" d="M225 119 L225 97 Q250 70 275 97 L275 119 L250 136 Z"/>'
+   +'<path class="vfocus" data-part="heart" d="M199 151 L218 176 L250 181 L281 176 L301 151"/>'
+   +'<path class="vfocus" data-part="handL" d="M80 151 L142 153 L198 140 M80 161 L143 166 L193 158"/>'
+   +'<path class="vfocus" data-part="handR" d="M420 151 L358 153 L302 140 M420 161 L357 166 L307 158"/>'
+   +'<line class="vscan" x1="25" y1="0" x2="475" y2="0"/>'
+   +hot('head',250,97)+hot('heart',250,173)+hot('handL',79,156)+hot('handR',421,156)
+   +'</svg></div><div class="vchoices" role="group" aria-label="Explore the four points">'
+   +Object.entries(VFACTS).map(([f,fact])=>'<button type="button" class="vchoice" data-f="'+f+'" aria-pressed="false" aria-controls="vfact">'+fact[0]+'</button>').join('')
+   +'</div><div class="vfooter"><span>HOMO FABER · REVISED DAILY</span><button class="vreplay" type="button" aria-label="Replay blueprint reveal">↻ REPLAY</button></div>';
   let cur=null,told=false,userTouched=false;
   function select(f,user){
     if(cur===f)return;cur=f;
@@ -3303,16 +3309,24 @@ function renderVitru(p){
     const gr=v.querySelector('.vanno[data-f="'+f+'"]');
     if(gr)gr.querySelectorAll('.vld,.vlabel').forEach(e=>e.classList.add('sel'));
     const h=v.querySelector('.vhot[data-f="'+f+'"]');if(h)h.classList.add('sel');
+    v.querySelectorAll('[aria-pressed]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.f===f)));
     v.querySelectorAll('[data-part="'+f+'"]').forEach(e=>e.classList.add('sel'));
     const fb=$('#vfact');
     fb.classList.add('swap');
-    later(()=>{fb.innerHTML='<div class="k">'+VFACTS[f][0]+'</div><p>'+VFACTS[f][1]+'</p>';fb.classList.remove('swap')},REDUCED?0:220);
+    later(()=>{if(cur!==f)return;fb.innerHTML='<div class="k">'+VFACTS[f][0]+'</div><p>'+VFACTS[f][1]+'</p>';fb.classList.remove('swap')},REDUCED?0:220);
     if(user){userTouched=true;tick();if(!told){told=true;log('figure 01: <b>annotated</b> — the human checks out')}}
   }
-  v.querySelectorAll('.vanno,.vhot').forEach(h=>{
+  v.querySelectorAll('.vchoice,.vhot').forEach(h=>{
     const go=()=>select(h.dataset.f,true);
-    h.addEventListener('mouseenter',go);h.addEventListener('click',go);
-    h.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}});
+    h.addEventListener('mouseenter',go);h.addEventListener('click',go);h.addEventListener('focus',go);
+    h.addEventListener('keydown',e=>{
+      if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}
+      if(['ArrowRight','ArrowDown','ArrowLeft','ArrowUp'].includes(e.key)){
+        e.preventDefault();const keys=Object.keys(VFACTS),dir=['ArrowRight','ArrowDown'].includes(e.key)?1:-1;
+        const next=keys[(keys.indexOf(h.dataset.f)+dir+keys.length)%keys.length];
+        v.querySelector('.vchoice[data-f="'+next+'"]').focus();
+      }
+    });
   });
   if(S._vitInt)clearInterval(S._vitInt);
   const CYC=['head','heart','handL','handR'];let ci=-1;
@@ -3320,17 +3334,19 @@ function renderVitru(p){
     if(!S.built||document.hidden||userTouched||!visSec.about||REDUCED)return;
     ci=(ci+1)%CYC.length;select(CYC[ci],false);
   },4200);
+  const replay=()=>{
+    if(REDUCED)return;
+    v.querySelectorAll('*').forEach(el=>el.getAnimations().forEach(a=>{if(a instanceof CSSAnimation)return;a.cancel()}));
+    v.querySelector('.v-art').animate([{clipPath:'inset(0 0 100% 0)',opacity:.3},{clipPath:'inset(0 0 0% 0)',opacity:1}],{duration:1800,easing:'cubic-bezier(.4,0,.2,1)'});
+    v.querySelector('.vscan').animate([{transform:'translateY(0px)',opacity:0},{opacity:.8,offset:.1},{transform:'translateY(500px)',opacity:0}],{duration:1800,easing:'cubic-bezier(.4,0,.2,1)'});
+    v.querySelectorAll('.vtrace').forEach(el=>{const length=el.getTotalLength();el.animate([{strokeDasharray:String(length),strokeDashoffset:length,opacity:.9},{strokeDasharray:String(length),strokeDashoffset:0,opacity:.9,offset:.8},{strokeDasharray:String(length),strokeDashoffset:0,opacity:0}],{duration:2100,easing:'ease-in-out'})});
+    v.querySelectorAll('.vhot').forEach((el,i)=>el.animate([{opacity:0},{opacity:1}],{duration:500,delay:900+i*150,fill:'backwards'}));
+  };
+  v.querySelector('.vreplay').addEventListener('click',replay);
+  if(S._vitObserver)S._vitObserver.disconnect();
   if(!REDUCED){
-    const strokes=v.querySelectorAll('.vl,.vld');
-    strokes.forEach(el=>{try{const L=el.getTotalLength();el.style.strokeDasharray=L;el.style.strokeDashoffset=L}catch(e){}});
-    const fades=v.querySelectorAll('.vlabel,.vhot,.vlab');
-    fades.forEach(el=>el.style.opacity='0');
-    const io=new IntersectionObserver(en=>en.forEach(x=>{if(x.isIntersecting){
-      strokes.forEach((el,i)=>later(()=>{el.style.transition='stroke-dashoffset 1s cubic-bezier(.7,0,.16,1)';el.style.strokeDashoffset=0;if(i%3===0)scratch()},i*110));
-      later(()=>fades.forEach(el=>{el.style.transition='opacity .8s';el.style.opacity='1'}),1100);
-      io.disconnect();
-    }}),{threshold:.35});
-    io.observe(v);
+    S._vitObserver=new IntersectionObserver(en=>{if(en.some(x=>x.isIntersecting)){replay();S._vitObserver.disconnect()}},{threshold:.35});
+    S._vitObserver.observe(v.querySelector('.vstage'));
   }
 }
 
