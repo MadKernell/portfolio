@@ -1162,8 +1162,8 @@ body.customcur #bcur{display:block}
 .sigblock{margin-top:48px;display:flex;flex-direction:column;align-items:center;gap:12px}
 .sigwrap #siglab{position:absolute;left:24px;right:24px;top:50%;transform:translateY(-50%);margin:0;max-width:none;font-family:var(--mono);font-size:11px;line-height:1.7;letter-spacing:.12em;text-transform:uppercase;color:rgba(23,20,16,.6);text-align:center;pointer-events:none}
 .sigwrap{position:relative;background:var(--paper);border:1px solid var(--hair-strong);padding:10px;box-shadow:0 14px 40px -22px rgba(0,0,0,.8)}
-#sigpad{display:block;max-width:100%;height:auto;cursor:crosshair;touch-action:none}
-.sigwrap .handglyph{font-size:15px;margin-right:6px}
+#sigpad{display:block;max-width:100%;height:auto;min-height:150px;cursor:crosshair;touch-action:none}
+.sigwrap .handglyph{display:block;font-size:30px;line-height:1;margin:0 auto 6px;text-align:center}
 .sigwrap #siglab{opacity:1;transition:opacity .3s ease}
 .sigwrap.is-signing #siglab{opacity:0}
 @media(prefers-reduced-motion:reduce){.sigwrap #siglab{transition:none}}
@@ -2997,7 +2997,7 @@ if(CURSOR){
   addEventListener('mousemove',e=>{
     mx=e.clientX;my=e.clientY;
     const t=e.target;
-    const hot=t.closest?(t.closest('.morph')?'⇄ drag':t.closest('.door')?'build':t.closest('.spark')?'catch':t.closest('#ctab')?'contact':t.closest('.aistamp')?'read':t.closest('.vhot,.vlabel')?'read':t.closest('#sigpad')?'sign':(t.closest('a,button,[role=button]')?'':null)):null;
+    const hot=t.closest?(t.closest('.morph')?'⇄ drag':t.closest('.door')?'build':t.closest('.spark')?'catch':t.closest('#ctab')?'contact':t.closest('.aistamp')?'read':t.closest('.vhot,.vlabel')?'read':t.closest('#sigclear')?'CLEAR':t.closest('#sigpad')?'sign':(t.closest('a,button,[role=button]')?'':null)):null;
     if(hot!==curHot){curHot=hot;bc.classList.toggle('hot',hot!==null);lab.textContent=hot||''}
   },{passive:true});
   addEventListener('pointerdown',()=>{if(curHot!==null)bc.classList.add('grab')});
@@ -3597,6 +3597,7 @@ function applyPersonaFeatures(k,p){
   $('#tokensbtn').hidden=k!=='designer';
   $('#sparkchip').hidden=k!=='curious';
   $('#contactInvite').textContent=INVITES[k];
+  $('#contact h2').innerHTML=k==='designer'?'What are you working on?':"Let's build something <em>people love.</em>";
   $('#toolLead').textContent=TOOLLEAD[k]||TOOLLEAD.everything;
   $('#toolquiz').style.display=k==='hiring'?'none':'';
   $('#resume').style.display=k==='hiring'?'':'none';
