@@ -1160,10 +1160,10 @@ body.customcur #bcur{display:block}
 
 /* ============ signature pad ============ */
 .sigblock{margin-top:48px;display:flex;flex-direction:column;align-items:center;gap:12px}
-.siglab{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--bone-45)}
+.sigwrap #siglab{position:absolute;left:24px;right:24px;top:50%;transform:translateY(-50%);margin:0;max-width:none;font-family:var(--mono);font-size:11px;line-height:1.7;letter-spacing:.12em;text-transform:uppercase;color:rgba(23,20,16,.6);text-align:center;pointer-events:none}
 .sigwrap{position:relative;background:var(--paper);border:1px solid var(--hair-strong);padding:10px;box-shadow:0 14px 40px -22px rgba(0,0,0,.8)}
 #sigpad{display:block;max-width:100%;height:auto;cursor:crosshair;touch-action:none}
-.sigwrap .handglyph{position:absolute;right:10px;bottom:8px;color:rgba(23,20,16,.4);font-size:15px;pointer-events:none}
+.sigwrap .handglyph{font-size:15px;margin-right:6px}
 .sigwrap .sigrule{position:absolute;left:24px;right:24px;bottom:34px;border-bottom:1px dashed rgba(23,20,16,.3);pointer-events:none}
 
 /* ============ collectible tokens (curious build) ============ */
@@ -1495,11 +1495,10 @@ body.customcur #bcur{display:block}
       <h2 class="rv">No one will ever see this exact site again.</h2>
       <p class="rv" id="compileSub">This version of me was assembled from your choices — your door, your pace, what you lingered on. Sign it, compile it, keep it.</p>
       <div class="sigblock rv">
-        <p class="siglab" id="siglab">Leave your mark — it gets stamped on your build sheet</p>
         <div class="sigwrap">
-          <canvas id="sigpad" width="480" height="160" aria-label="Signature pad — draw your mark with your pointer"></canvas>
+          <canvas id="sigpad" width="480" height="160" aria-label="Signature pad — draw your mark with your pointer" aria-describedby="siglab"></canvas>
+          <p class="siglab" id="siglab"><span class="handglyph" aria-hidden="true">✎</span>SIGN THE GUESTBOOK HERE — IT GOES ON YOUR BUILD SHEET</p>
           <span class="sigrule" aria-hidden="true"></span>
-          <span class="handglyph" aria-hidden="true">✎ your hand here</span>
         </div>
         <button class="chip" id="sigclear" type="button">clear mark</button>
       </div>
@@ -3598,7 +3597,6 @@ function applyPersonaFeatures(k,p){
   $('#toolLead').textContent=TOOLLEAD[k]||TOOLLEAD.everything;
   $('#toolquiz').style.display=k==='hiring'?'none':'';
   $('#resume').style.display=k==='hiring'?'':'none';
-  $('#siglab').textContent=k==='curious'?'Sign the guestbook — it goes on your build sheet':'Leave your mark — it goes on your build sheet';
   if(k==='designer')fillTokens(p);
   stopTour(true);
 }
