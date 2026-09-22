@@ -1783,19 +1783,30 @@ const TOOLS=[
  ['Method','Agile / Scrum·Design systems·Human Design']
 ];
 
-/* ================= sound (synthesized, off by default) ================= */
-let AC=null;
-const ctx=()=>{if(!AC){const A=window.AudioContext||window.webkitAudioContext;if(A)AC=new A()}if(AC&&AC.state==='suspended')AC.resume();return AC};
-function tone(f,dur,g,type){const a=ctx();if(!a||!S.sound)return;const o=a.createOscillator(),v=a.createGain();o.type=type||'sine';o.frequency.value=f;
+/* ================= sound — start as soon as the browser permits ================= */
+let AC=null,audioMaster=null,audioWelcomed=false,audioResuming=false;
+function syncSoundUI(){
+ const running=S.sound&&AC&&AC.state==='running';
+ ['soundbtn','soundbtn2'].forEach(id=>{const b=$('#'+id);if(!b)return;b.textContent=!S.sound?'sound off':running?'sound on':'enable sound';b.setAttribute('aria-pressed',String(!!running))});
+}
+const ctx=()=>{
+ if(!AC){const A=window.AudioContext||window.webkitAudioContext;if(A){
+  AC=new A();audioMaster=AC.createGain();audioMaster.gain.value=S.sound?1:0;audioMaster.connect(AC.destination);
+  AC.addEventListener('statechange',()=>{syncSoundUI();if(AC.state==='running'&&S.sound&&!audioWelcomed){audioWelcomed=true;pad(220,.65,.025)}});
+ }}
+ if(AC&&S.sound&&AC.state!=='running'&&!audioResuming){audioResuming=true;AC.resume().catch(()=>{}).finally(()=>{audioResuming=false;syncSoundUI()})}
+ syncSoundUI();return AC;
+};
+function tone(f,dur,g,type){if(!S.sound)return;const a=ctx();if(!a||a.state!=='running')return;const o=a.createOscillator(),v=a.createGain();o.type=type||'sine';o.frequency.value=f;
  v.gain.setValueAtTime(0,a.currentTime);v.gain.linearRampToValueAtTime(g,a.currentTime+dur*.15);v.gain.exponentialRampToValueAtTime(.0001,a.currentTime+dur);
- o.connect(v).connect(a.destination);o.start();o.stop(a.currentTime+dur)}
+ o.connect(v).connect(audioMaster);o.start();o.stop(a.currentTime+dur)}
 const tick=()=>tone(1680,.07,.05);
 const click=()=>tone(760,.1,.06,'triangle');
 function pad(base,dur,g){[1,1.25,1.5,2].forEach((m,i)=>tone(base*m,dur+i*.1,(g||.05)/(i+1),'triangle'))}
-function scratch(){const a=ctx();if(!a||!S.sound)return;const len=a.sampleRate*.09,b=a.createBuffer(1,len,a.sampleRate),d=b.getChannelData(0);
+function scratch(){if(!S.sound)return;const a=ctx();if(!a||a.state!=='running')return;const len=a.sampleRate*.09,b=a.createBuffer(1,len,a.sampleRate),d=b.getChannelData(0);
  for(let i=0;i<len;i++)d[i]=(Math.random()*2-1)*(1-i/len);
  const s=a.createBufferSource(),f=a.createBiquadFilter(),v=a.createGain();s.buffer=b;f.type='bandpass';f.frequency.value=950;f.Q.value=.9;v.gain.value=.12;
- s.connect(f).connect(v).connect(a.destination);s.start()}
+ s.connect(f).connect(v).connect(audioMaster);s.start()}
 const PFREQ={hiring:220,designer:246.9,curious:261.6,everything:196};
 
 /* ================= system log ================= */
@@ -2932,15 +2943,14 @@ addEventListener('keydown',e=>{if(e.key==='Escape')$('#sheetmodal').classList.re
 /* ================= hud controls ================= */
 function setSound(v){
   S.sound=v;
-  const t=v?'sound on':'sound off';
-  const b1=$('#soundbtn'),b2=$('#soundbtn2');
-  b1.textContent=t;b1.setAttribute('aria-pressed',String(v));
-  b2.textContent=t;b2.setAttribute('aria-pressed',String(v));
-  if(v){ctx();tone(880,.25,.06,'triangle');log('sound: <b>on</b> — pencil, paper &amp; pads, synthesized live')}
+  if(audioMaster)audioMaster.gain.setTargetAtTime(v?1:0,AC.currentTime,.02);
+  syncSoundUI();
+  if(v){if(AC&&AC.state!=='running')audioResuming=false;ctx();tone(880,.25,.06,'triangle');log('sound: <b>on</b> — pencil, paper &amp; pads, synthesized live')}
   else log('sound: off');
 }
-$('#soundbtn').addEventListener('click',()=>setSound(!S.sound));
-$('#soundbtn2').addEventListener('click',()=>setSound(!S.sound));
+const toggleSound=()=>setSound(!(S.sound&&AC&&AC.state==='running'));
+$('#soundbtn').addEventListener('click',toggleSound);
+$('#soundbtn2').addEventListener('click',toggleSound);
 $('#rebuildbtn').addEventListener('click',function(){
   const d=$('#draft');
   if(!d.classList.contains('gone'))return;
@@ -3612,7 +3622,16 @@ paperGrid();renderDoors();
 addEventListener('resize',()=>{if(!S.built)paperGrid()});
 log('boot: one-of-one v1.0');
 log('canvas: blank — awaiting visitor');
-addEventListener('pointerdown',()=>{if(S.sound)ctx()},{once:true});
+// Hover cannot unlock audio on a fresh browser visit. A press anywhere or a
+// keyboard gesture can; keep listening for touch-end and interrupted contexts.
+const unlockSound=e=>{
+ if(!S.sound||e.target.closest?.('#soundbtn,#soundbtn2'))return;
+ if(e.type==='keydown'&&(e.repeat||e.ctrlKey||e.metaKey||e.altKey))return;
+ if(AC&&AC.state!=='running')audioResuming=false;
+ ctx();
+};
+['pointerdown','pointerup','touchend','keydown'].forEach(type=>addEventListener(type,unlockSound,{capture:true,passive:true}));
+ctx();
 (function arrival(){
   const arr=$('#arrival');
   let gone=false;
